@@ -1,5 +1,15 @@
-import Package3.Car;
-import Package3.Vehicle;
+import package3.Car;
+import package3.Vehicle;
+import package4.Pen;
+import package4.WritingTool;
+import package5.ValueHolder;
+import package6.DayOfWeek;
+import package7.Cloths;
+import package7.Electronics;
+import package7.Product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,11 +32,53 @@ public class Main {
         Vehicle myVehicle = new Vehicle();
         Car myCar = new Car();
 
-        myVehicle.GetDetails();
-        myCar.GetDetails();
+        myVehicle.getDetails();
+        myCar.getDetails();
 
-        myCar.IncreaseACPower();
-        myCar.GetDetails();
+        myCar.increaseACPower();
+        myCar.getDetails();
 
+        WritingTool wt = new WritingTool();
+        wt.erase();
+        Pen pen = new Pen();
+        pen.erase();
+
+        ValueHolder<String> stringHolder = new ValueHolder<>();
+        stringHolder.setValue("hello");
+        stringHolder.getValue();
+        stringHolder.setValue("world");
+        stringHolder.getValue();
+
+        ValueHolder<Integer> integerHolder = new ValueHolder<>();
+        integerHolder.setValue(8);
+        integerHolder.getValue();
+        integerHolder.setValue(18);
+        integerHolder.getValue();
+
+        ValueHolder<Boolean> booleanHolder = new ValueHolder<>();
+        booleanHolder.setValue(true);
+        booleanHolder.getValue();
+        booleanHolder.setValue(false);
+        booleanHolder.getValue();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 7: ");
+        int inputNumber = scanner.nextInt();
+        if (inputNumber < 1 || inputNumber > 7) {
+            System.out.println("Invalid Number");
+        }
+        else {
+            DayOfWeek day = DayOfWeek.values()[inputNumber - 1];
+            System.out.println("Day of the week is: " + day);
+        }
+
+        ArrayList<Product> productList = new ArrayList<>();
+        Electronics monitor = new Electronics("PC Monitor",1299,"OLED 32'","GIGABYTE",0);
+        Cloths shirt = new Cloths("Shirt",15,"Blue T-Shirt","L","Cotton");
+        productList.add(monitor);
+        productList.add(shirt);
+        for (Product product: productList) {
+            System.out.println(product.toString());
+        }
     }
 }

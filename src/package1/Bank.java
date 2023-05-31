@@ -1,4 +1,4 @@
-package Package1;
+package package1;
 
 public class Bank {
     private final String customerName;
@@ -8,13 +8,13 @@ public class Bank {
         this.customerName = customerName;
         this.accountNumber = accountNumber;
     }
-    public void Deposit(int newDeposit){
+    public void deposit(int newDeposit){
         accountBalance = accountBalance + newDeposit;
     }
-    public void Withdraw (int toWithdraw){
+    public void withdraw (int toWithdraw){
         accountBalance = accountBalance - toWithdraw;
     }
-    public int GetBalance(){
+    public int getBalance(){
         return accountBalance;
     }
 }
