@@ -27,7 +27,6 @@ public class Main {
 
         myCar.IncreaseACPower();
         myCar.GetDetails();
-        myCar.IncreaseACPower();
-        myCar.GetDetails();
+
     }
 }
